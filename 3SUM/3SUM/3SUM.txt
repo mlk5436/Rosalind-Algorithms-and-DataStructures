@@ -1,0 +1,46 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+
+void threeSum(int arr[], int numEle, FILE *ofp) {
+	//printf("called\n");
+	int x = INT_MAX, y = INT_MAX, z = INT_MAX;
+	for (int i = 1; i <= numEle; i++) {
+		for (int j = 1; j <= numEle; j++) {
+			for (int k = 1; k <= numEle; k++) {
+				if (i != j && i != k && j != k) {
+					if (arr[i] + arr[j] + arr[k] == 0) {
+						x = i;
+						y = j;
+						z = k;
+						//printf("hit\n");
+						break;
+					}
+				}
+			}
+		}
+	}
+	if(x != INT_MAX)
+		fprintf(ofp, "%d %d %d\n", x, y, z);
+	else
+		fprintf(ofp, "%d \n", -1);
+
+}
+
+int main() {
+	FILE *fp = fopen("input.txt", "r");
+	FILE *ofp = fopen("output.txt", "w");
+	if (fp == NULL || ofp == NULL)
+		return -1;
+	int numArr = 0, numEle = 0, arr[10000];
+	fscanf(fp, "%d %d", &numArr, &numEle);
+	for (int i = 1; i <= numArr; i++) {
+		for (int j = 1; j <= numEle; j++) {
+			fscanf(fp, "%d ", &arr[j]);
+		}
+		threeSum(arr, numEle, ofp);
+
+	}
+
+	return 0;
+}

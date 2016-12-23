@@ -1,0 +1,4 @@
+﻿  median.cpp
+c:\users\meng\desktop\cmpsc 465 programming hw\median\median\median.cpp(6): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  median.vcxproj -> C:\Users\Meng\Desktop\CMPSC 465 Programming HW\median\Debug\median.exe
+  median.vcxproj -> C:\Users\Meng\Desktop\CMPSC 465 Programming HW\median\Debug\median.pdb (Partial PDB)

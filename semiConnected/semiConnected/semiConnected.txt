@@ -1,0 +1,75 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <list>
+#define a 1000
+
+using namespace std;
+
+int findPath(bool adj[][a], int vertices, int src, int dest) {
+	bool visited[1000];
+	for (int i = 1; i <= vertices; i++)
+		visited[i] = false;
+	visited[src] = true;
+	list <int> List;
+	List.push_back(src);
+	while (!List.empty()) {
+		int u = List.front();
+		List.pop_front();
+		for (int i = 1; i <= vertices; i++) {
+			if (adj[u][i] == true) {
+				if (i == dest)
+					return 1;
+				if (visited[i] == false) {
+					visited[i] == true;
+					List.push_back(i);
+				}
+
+			}
+		}
+	}
+	return -1;
+}
+
+int main() {
+
+	FILE *fp = fopen("input.txt", "r");
+	FILE *ofp = fopen("output.txt", "w");
+	if (fp == NULL || ofp == NULL)
+		return -1;
+	int num = 0, vertices = 0, edges = 0;
+	bool adj[1000][1000];
+	fscanf(fp, "%d", &num);
+	for (int i = 1; i <= num; i++) {
+		for (int j = 1; j <= vertices; j++) {
+			for (int k = 1; k <= vertices; k++)
+				adj[j][k] = false;
+		}
+		fscanf(fp, "%d %d", &vertices, &edges);
+		for (int j = 1; j <= edges; j++) {
+			int u = 0, v = 0;
+			fscanf(fp, "%d %d", &u, &v);
+			adj[u][v] = true;
+		}
+		int check = 0, checks = 0, count = 0, x = 0;
+		for (int j = 1; j <= vertices; j++) {
+			for (int k = j+1; k <= vertices; k++) {
+				x++;
+				check = findPath(adj, vertices, j, k);
+				checks = findPath(adj, vertices, k, j);
+				printf("(%d, %d) check: %d, checks: %d\n", j, k, check, checks);
+				if (check == 1 || checks == 1)
+					count++;
+			}
+		}
+		//printf("\n\n");
+		if (count == x)
+			fprintf(ofp, "%d ", 1);
+		else
+			fprintf(ofp, "%d ", -1);
+	}
+	fclose(fp);
+	fclose(ofp);
+
+	return 0;
+}

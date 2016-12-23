@@ -1,0 +1,4 @@
+﻿  binarysearch.cpp
+c:\users\meng\desktop\cmpsc 465 programming hw\binary search\binary search\binarysearch.cpp(54): warning C4715: 'binarySearch': not all control paths return a value
+  Binary Search.vcxproj -> C:\Users\Meng\Desktop\CMPSC 465 Programming HW\Binary Search\Debug\Binary Search.exe
+  Binary Search.vcxproj -> C:\Users\Meng\Desktop\CMPSC 465 Programming HW\Binary Search\Debug\Binary Search.pdb (Partial PDB)

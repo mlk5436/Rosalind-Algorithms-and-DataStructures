@@ -1,0 +1,60 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#define a 1000
+
+using namespace std;
+int Bellman(bool adj[][a], int vertices, int weight[][a]);
+
+int main() {
+	FILE *fp = fopen("input.txt", "r");
+	FILE *ofp = fopen("output.txt", "w");
+	if (fp == NULL || ofp == NULL)
+		return -1;
+	int vertices = 0, edges = 0, weight[1000][1000], num = 0;
+	bool adj[1000][1000];
+	fscanf(fp, "%d ", &num);
+	for (int i = 1; i <= num; i++) {
+		fscanf(fp, "%d %d", &vertices, &edges);
+		for (int u = 1; u <= vertices; u++) {
+			for (int v = 1; v <= vertices; v++) {
+				adj[u][v] = false;
+				weight[u][v] = 0;
+			}
+		}
+		for (int i = 1; i <= edges; i++) {
+			int u = 0, v = 0, w = 0;
+			fscanf(fp, "%d %d %d", &u, &v, &w);
+			weight[u][v] = w;
+			//printf("Weight[%d][%d]: %d \n", u, v, weight[u][v]);
+			adj[u][v] = true;
+		}
+		//printf("\n\n");
+		fprintf(ofp, "%d ", Bellman(adj, vertices, weight));
+	}
+	fclose(fp);
+	fclose(ofp);
+
+	return 0;
+}
+int Bellman(bool adj[][a], int vertices, int weight[][a]) {
+	int dist[1000];
+	for (int i = 1; i <= vertices; i++) {
+		dist[i] = INT_MAX;
+	}
+	dist[1] = 0;
+	for (int k = 1; k <= vertices; k++) {
+		for (int i = 1; i <= vertices; i++) {
+			for (int j = 1; j <= vertices; j++) {
+				if (adj[i][j] == true) {
+					if (dist[i] != INT_MAX && dist[j] > dist[i] + weight[i][j]) {
+						if (k == vertices)
+							return 1;
+						dist[j] = dist[i] + weight[i][j];
+					}
+				}
+			}
+		}
+	}
+	return -1;
+}

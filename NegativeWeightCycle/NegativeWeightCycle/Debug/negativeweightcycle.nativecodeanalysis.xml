@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\meng\desktop\cmpsc 465 programming hw\negativeweightcycle\negativeweightcycle\</FILEPATH>
+      <FILENAME>negativeweightcycle.cpp</FILENAME>
+      <LINE>25</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>6246</DEFECTCODE>
+    <DESCRIPTION>Local declaration of 'i' hides declaration of the same name in outer scope. For additional information, see previous declaration at line '17' of 'c:\users\meng\desktop\cmpsc 465 programming hw\negativeweightcycle\negativeweightcycle\negativeweightcycle.cpp'.</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\meng\desktop\cmpsc 465 programming hw\negativeweightcycle\negativeweightcycle\</FILEPATH>
+        <FILENAME>negativeweightcycle.cpp</FILENAME>
+        <LINE>17</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\meng\desktop\cmpsc 465 programming hw\negativeweightcycle\negativeweightcycle\</FILEPATH>
+      <FILENAME>negativeweightcycle.cpp</FILENAME>
+      <LINE>9</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6262</DEFECTCODE>
+    <DESCRIPTION>Function uses '5000048' bytes of stack:  exceeds /analyze:stacksize '16384'.  Consider moving some data to heap.</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <PATH />
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\meng\desktop\cmpsc 465 programming hw\negativeweightcycle\negativeweightcycle\</FILEPATH>
+      <FILENAME>negativeweightcycle.cpp</FILENAME>
+      <LINE>16</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'fscanf'.</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <PATH />
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\meng\desktop\cmpsc 465 programming hw\negativeweightcycle\negativeweightcycle\</FILEPATH>
+      <FILENAME>negativeweightcycle.cpp</FILENAME>
+      <LINE>18</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'fscanf'.</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <PATH />
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\meng\desktop\cmpsc 465 programming hw\negativeweightcycle\negativeweightcycle\</FILEPATH>
+      <FILENAME>negativeweightcycle.cpp</FILENAME>
+      <LINE>27</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'fscanf'.</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <PATH />
+  </DEFECT>
+</DEFECTS>
